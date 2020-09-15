@@ -17,11 +17,12 @@ Create an empty DAG file that will do the following:
 
 
 To do so, you'll need:
-1. To modify the Astronomer image by adding `pandas` and `sklearn` in your `requirements.txt` [instructions here](https://www.astronomer.io/docs/cloud/stable/develop/customize-image/#add-python-and-os-level-packages).
+1. To modify the Astronomer image by adding `pandas` and `scikit-learn` in your `requirements.txt` [instructions here](https://www.astronomer.io/docs/cloud/stable/develop/customize-image/#add-python-and-os-level-packages).
 1. [S3Hook](https://airflow.apache.org/docs/stable/_modules/airflow/hooks/S3_hook.html), to communicate with S3 (download, upload).
 1. Add a connection in Airflow to be able to store things in my personal S3 bucket, you will set the SECRET_KEY and ACCESS_KEY (I'll give you by DM) in the Airflow web interface in the tab Admin > Connections, to give the permissions to Airflow for managing AWS services on your behalf.
 1. [PythonOperator](https://airflow.apache.org/docs/stable/howto/operator/python.html), that will contain the model generator.
 1. [Airflow Macros](https://airflow.apache.org/docs/stable/macros-ref.html#macros), handy for getting some variables around the execution of the DAG. Useful for outputing in a folder prefixed by a date representing the execution date of the pipeline run.
+1. Using `astro dev start` you'll be able to run Airflow locally to test your pipeline before deploying in production, [for more info](https://www.astronomer.io/docs/cloud/stable/develop/cli-quickstart/#start-airflow-locally).
 
 ![Add the connection in Airflow UI](https://github.com/faouzelfassi/data-in-the-cloud/blob/master/doc/airflow_add_connection.png?raw=true)
 
